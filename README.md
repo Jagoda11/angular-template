@@ -8,7 +8,7 @@ A starter template for Angular projects with ESLint, Prettier, and custom script
 
 ## Features ✨
 
-- **Angular 18.2.11**: Latest version of Angular for building modern web applications.
+- **Angular**: Latest version of Angular for building modern web applications.
 - **ESLint**: Integrated ESLint for code linting and maintaining code quality.
 - **Prettier**: Code formatting with Prettier to ensure consistent code style.
 - **TypeScript**: Strongly typed JavaScript for better development experience.
