@@ -1,27 +1,103 @@
-# AngularTemplate
+# Angular Template Project 🌟
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+![License: Commercial](https://img.shields.io/badge/license-Commercial-pink)
+![TypeScript](https://img.shields.io/github/package-json/dependency-version/Jagoda11/angular-template/dev/typescript?label=TypeScript)
+![Angular](https://img.shields.io/github/package-json/dependency-version/Jagoda11/angular-template/@angular/core?label=Angular)
 
-## Development server
+A starter template for Angular projects with ESLint, Prettier, and custom scripts. This template is designed to help you kickstart your Angular applications with the latest configurations and best practices. 🚀
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features ✨
 
-## Code scaffolding
+- **Angular 18.2.11**: Latest version of Angular for building modern web applications.
+- **ESLint**: Integrated ESLint for code linting and maintaining code quality.
+- **Prettier**: Code formatting with Prettier to ensure consistent code style.
+- **TypeScript**: Strongly typed JavaScript for better development experience.
+- **Karma & Jasmine**: Testing setup with Karma and Jasmine for unit testing.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started 🛠️
 
-## Build
+### Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Node.js (v23.1.0 or higher)
+- npm (v10.9.0 or higher)
 
-## Running unit tests
+### Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Clone the repository**:
 
-## Running end-to-end tests
+   ```bash
+   git clone https://github.com/Jagoda11/angular-template.git
+   cd angular-template
+  ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**Install dependencies**:
 
-## Further help
+   ```bash
+   npm install 
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Running the Development Server**
+To start the development server, run:
+
+ ```bash
+   npm start
+   ```
+
+This will start the Angular development server and you can view your application at <http://localhost:4200>.
+
+**Building the Project**
+To build the project,run:
+
+ ```bash
+   npm run build
+   ```
+
+This will create a production build of your application in the dist/ directory.
+
+Running Tests
+To run the tests, use:
+
+ ```bash
+   npm test
+   ```
+
+This will execute the unit tests using Karma and Jasmine.
+
+**Linting the Code**
+To lint the code, run:
+
+ ```bash
+   npm run lint
+   ```
+
+This will run ESLint on your project to check for code quality issues.
+
+**Formatting the Code**
+To format the code using Prettier, run:
+
+ ```bash
+   npm run format
+   ```
+
+This will format your code according to the Prettier configuration.
+
+**Cleaning Up**
+To clean up the project (remove node_modules, dist, and package-lock.json), run:
+
+ ```bash
+   npm run clean
+   ```
+
+**Custom Scripts**
+**Start:** npm start - 🚀 Starting development server...
+**Build:** npm run build - 🏗️ Building project...
+**Watch:** npm run watch - 👀 Watching for changes...
+**Test:** npm test - 🧪 Running tests...
+**Lint:** npm run lint - 🔍 Linting...
+**Clean:** npm run clean - 🧽 Cleaning up...
+
+**Contributing** 🤝
+Contributions are welcome! Please open an issue or submit a pull request.
+
+This project is licensed under the terms of the Commercial License Agreement. For more details, see the [LICENSE](LICENSE.md) file.
+© 2024 Jagoda11
