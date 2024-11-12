@@ -90,13 +90,19 @@ To clean up the project (remove node_modules, dist, and package-lock.json), run:
 
 **Custom Scripts**
 **Start:** npm start - 🚀 Starting development server...
+
 **Build:** npm run build - 🏗️ Building project...
+
 **Watch:** npm run watch - 👀 Watching for changes...
+
 **Test:** npm test - 🧪 Running tests...
+
 **Lint:** npm run lint - 🔍 Linting...
+
 **Clean:** npm run clean - 🧽 Cleaning up...
 
 **Contributing** 🤝
+
 Contributions are welcome! Please open an issue or submit a pull request.
 
 This project is licensed under the terms of the Commercial License Agreement. For more details, see the [LICENSE](LICENSE.md) file.
