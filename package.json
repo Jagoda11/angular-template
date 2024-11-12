@@ -1,20 +1,21 @@
 {
   "name": "angular-template",
   "version": "0.0.0",
+  "type": "module",
   "description": "A starter template for Angular projects with ESLint, Prettier, and custom scripts.",
   "author": "Jagoda <your.email@example.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jagoda11/angular-template.git",
+    "url": "https://github.com/Jagoda11/angular-template.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "echo '🚀 Starting development server...' && ng serve",
     "build": "echo '🏗️ Building project...' && ng build",
     "watch": "echo '👀 Watching for changes...' && ng build --watch --configuration development",
     "test": "echo '🧪 Running tests...' && ng test",
-    "lint": "echo '🔍 Linting...' && eslint . --ext .ts,.html",
-    "format": "echo '✨ Formatting code...' && prettier --write '**/*.{ts,html,css,scss}'",
+    "lint": "echo '🔍 Linting...' && eslint .",
     "clean": "echo '🧽 Cleaning up...' && rm -rf ./node_modules ./dist && rm package-lock.json"
   },
   "private": true,
