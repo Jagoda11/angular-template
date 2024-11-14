@@ -16,7 +16,7 @@ jobs:
         run: echo "::add-mask::${{ secrets.GITHUB_TOKEN }}"
 
       - name: Close stale issues and PRs 🕒
-        uses: actions/stale@v3
+        uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           stale-issue-message: 'This issue has been automatically closed due to inactivity. Please reopen if you still need assistance.'
