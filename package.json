@@ -14,7 +14,7 @@
     "start": "echo '🚀 Starting development server...' && ng serve",
     "build": "echo '🏗️ Building project...' && ng build",
     "watch": "echo '👀 Watching for changes...' && ng build --watch --configuration development",
-    "test": "echo '🧪 Running tests...' && ng test",
+    "test": "echo '🧪 Running tests with coverage...' && ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "echo '🔍 Linting...' && eslint .",
     "lint-fix": "echo '🔧 Linting and fixing issues...' && eslint --fix . && prettier --write .",
     "format": "echo '✨ Formatting code with Prettier...' && prettier --write .",
