@@ -1,0 +1,36 @@
+name: Close Merged Pull Requests
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  close-issues:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mask GitHub Token
+        run: echo "::add-mask::${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Close linked issues
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const pull_request = context.payload.pull_request;
+            const repo = context.repo.repo;
+            const owner = context.repo.owner;
+            const issues = pull_request.body.match(/#[0-9]+/g) || [];
+            for (const issue of issues) {
+              const issue_number = issue.replace('#', '');
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number,
+                state: 'closed'
+              });
+            }
+          github-token: ${{ secrets.GITHUB_TOKEN }}

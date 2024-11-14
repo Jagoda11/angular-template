@@ -1,0 +1,29 @@
+name: 🧹 Remove Stale Unmerged Branches
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs every Sunday
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎭 Mask GitHub Token
+        run: echo "::add-mask::${{ secrets.GITHUB_TOKEN }}"
+
+      - name: 🚀 Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: 🧹 Remove Stale Unmerged Branches
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch --prune
+          for branch in $(git branch -r | grep -v '\->' | grep -v master | grep -v main | grep -v HEAD | sed 's/origin\///'); do
+            if [ $(git log -1 --since="90 days ago" --pretty="%H" origin/$branch) ]; then
+              echo "Branch $branch is active."
+            else
+              echo "Branch $branch is stale and unmerged. Deleting..."
+              git push origin --delete $branch
+            fi
+          done

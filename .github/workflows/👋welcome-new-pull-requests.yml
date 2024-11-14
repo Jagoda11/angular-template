@@ -1,0 +1,31 @@
+name: Welcome New Pull Requests
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎭 Mask GitHub Token
+        run: echo "::add-mask::${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Post welcome message 📨
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const pr_number = context.payload.pull_request.number;
+            const repo = context.repo.repo;
+            const owner = context.repo.owner;
+            const body = ':tada: :sparkles: Thanks for opening this pull request! We will review🧐 it soon. :rocket:';
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: pr_number,
+              body
+            });
+          github-token: ${{ secrets.GITHUB_TOKEN }}

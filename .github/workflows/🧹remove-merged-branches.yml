@@ -1,0 +1,25 @@
+name: 🧹 Remove Merged Branches
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs every Sunday
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🎭 Mask GitHub Token
+        run: echo "::add-mask::${{ secrets.GITHUB_TOKEN }}"
+
+      - name: 🚀 Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: 🧹 Remove Merged Branches
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git fetch --prune
+          for branch in $(git branch -r --merged origin/main | grep -v '\->' | grep -v master | grep -v main | sed 's/origin\///'); do
+            echo "Deleting merged branch $branch..."
+            git push origin --delete $branch
+          done

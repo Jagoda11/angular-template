@@ -1,0 +1,31 @@
+name: Thank Contributors for Closing Issues
+
+on:
+  issues:
+    types: [closed]
+
+permissions:
+  issues: write
+
+jobs:
+  thank:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mask GitHub Token
+        run: echo "::add-mask::${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Post thank you message 🙏
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const issue_number = context.issue.number;
+            const repo = context.repo.repo;
+            const owner = context.repo.owner;
+            const body = ':tada: :sparkles: Thanks for closing this issue! Your contribution helps keep the project moving forward. :rocket:';
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number,
+              body
+            });
+          github-token: ${{ secrets.GITHUB_TOKEN }}
