@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '0:4200' # Map any available port on the host to 4200 in the container
+    volumes:
+      - .:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true

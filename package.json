@@ -19,7 +19,9 @@
     "lint-fix": "echo '🔧 Linting and fixing issues...' && eslint --fix . && prettier --write .",
     "format": "echo '✨ Formatting code with Prettier...' && prettier --write .",
     "clean": "echo '🧽 Cleaning up...' && rm -rf ./node_modules ./dist && rm package-lock.json",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "docker-clean": "echo '🧹 Cleaning up Docker resources...' && docker stop $(docker ps -aq) && docker rm $(docker ps -aq) && docker image prune -af && docker volume prune -f && docker network prune -f && docker builder prune -f",
+    "postinstall": "if [ \"$DOCKER\" = \"true\" ]; then npm install typescript@5.5.4 --legacy-peer-deps; fi"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
@@ -41,7 +43,7 @@
     "@angular/router": "^18.2.11",
     "rxjs": "~7.8.1",
     "tslib": "^2.8.1",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.14.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.11",
@@ -64,6 +66,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "typescript": "~5.6.3"
+    "typescript": "~5.4.0"
   }
 }
