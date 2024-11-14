@@ -16,7 +16,18 @@
     "watch": "echo '👀 Watching for changes...' && ng build --watch --configuration development",
     "test": "echo '🧪 Running tests...' && ng test",
     "lint": "echo '🔍 Linting...' && eslint .",
-    "clean": "echo '🧽 Cleaning up...' && rm -rf ./node_modules ./dist && rm package-lock.json"
+    "lint-fix": "echo '🔧 Linting and fixing issues...' && eslint --fix . && prettier --write .",
+    "format": "echo '✨ Formatting code with Prettier...' && prettier --write .",
+    "clean": "echo '🧽 Cleaning up...' && rm -rf ./node_modules ./dist && rm package-lock.json",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+    "npm run lint-fix"
+    ],
+    "*.{json,css,scss,md,html}": [
+      "prettier --write"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -51,6 +62,7 @@
     "karma-coverage": "~2.2.1",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "typescript": "~5.6.3"
   }
