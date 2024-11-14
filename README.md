@@ -3,6 +3,7 @@
 ![License: Commercial](https://img.shields.io/badge/license-Commercial-pink)
 ![TypeScript](https://img.shields.io/github/package-json/dependency-version/Jagoda11/angular-template/dev/typescript?label=TypeScript)
 ![Angular](https://img.shields.io/github/package-json/dependency-version/Jagoda11/angular-template/@angular/core?label=Angular)
+[![🧹 Remove Stale Unmerged Branches](https://github.com/Jagoda11/angular-template/actions/workflows/%F0%9F%A7%B9remove-stale-unmerged-branches.yml/badge.svg)](https://github.com/Jagoda11/angular-template/actions/workflows/%F0%9F%A7%B9remove-stale-unmerged-branches.yml)
 
 A starter template for Angular projects with ESLint, Prettier, and custom scripts. This template is designed to help you kickstart your Angular applications with the latest configurations and best practices. 🚀
 
@@ -138,7 +139,7 @@ This project includes several GitHub Actions workflows to automate various tasks
 - **🗑️ remove-merged-branches.yml**: Deletes branches automatically after they are merged, helping to keep the repository tidy.
 - **🗑️ remove-stale-unmerged-branches.yml**: Removes branches that have been inactive and remain unmerged, maintaining a clean repository.
 
-**Contributing** 🤝
+## Contributing 🤝
 
 Contributions are welcome! Please open an issue or submit a pull request.
 
