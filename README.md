@@ -88,18 +88,55 @@ To clean up the project (remove node_modules, dist, and package-lock.json), run:
    npm run clean
    ```
 
-**Custom Scripts**
-**Start:** npm start - 🚀 Starting development server...
+## 📜 Scripts
 
-**Build:** npm run build - 🏗️ Building project...
+Here are the available scripts in this project:
 
-**Watch:** npm run watch - 👀 Watching for changes...
+- **`start`** 🚀: Starts the development server  
+  `npm run start`
 
-**Test:** npm test - 🧪 Running tests...
+- **`build`** 🏗️: Builds the project for production  
+  `npm run build`
 
-**Lint:** npm run lint - 🔍 Linting...
+- **`watch`** 👀: Rebuilds the project on file changes  
+  `npm run watch`
 
-**Clean:** npm run clean - 🧽 Cleaning up...
+- **`test`** 🧪: Runs tests for the project  
+  `npm run test`
+
+- **`lint`** 🔍: Lints the project files using ESLint  
+  `npm run lint`
+
+- **`lint-fix`** 🔧: Lints and fixes issues in the codebase  
+  `npm run lint-fix`
+
+- **`format`** ✨: Formats the codebase using Prettier  
+  `npm run format`
+
+- **`clean`** 🧽: Cleans up `node_modules`, `dist`, and `package-lock.json`  
+  `npm run clean`
+
+- **`lint-staged`** 📝: Runs lint-staged to check and format only staged files  
+  `npm run lint-staged`
+
+  ## 🛡️ Pre-commit Hooks
+
+This template uses Husky to run lint-staged and tests automatically before each commit. This ensures all code meets quality standards and passes tests before merging into the main codebase.
+
+## ⚙️ Workflows
+
+This project includes several GitHub Actions workflows to automate various tasks and maintain the project efficiently:
+
+- **🔄 npm-upgrade.yml**: Automatically checks for and suggests upgrades to npm dependencies.
+- **🔒 close-stale-issues-and-prs.yml**: Closes stale issues and pull requests that have had no recent activity, helping keep the issue tracker organized.
+- **🏷️ label-new-pull-requests.yml**: Automatically labels new pull requests to streamline tracking and review processes.
+- **🙏 thank-contributors-on-issue-close.yml**: Sends a thank-you message to contributors when an issue is closed, recognizing their support.
+- **👋 welcome-new-pull-requests.yml**: Welcomes new contributors by commenting on their first pull request.
+- **🚀 ci.yml**: Runs continuous tests on each commit to ensure code quality.
+- **👋 welcome.yml**: Greets new contributors when they create their first issue.
+- **🔒 close-merged-pull-requests.yml**: Closes pull requests automatically when they are merged, keeping the PR list clean.
+- **🗑️ remove-merged-branches.yml**: Deletes branches automatically after they are merged, helping to keep the repository tidy.
+- **🗑️ remove-stale-unmerged-branches.yml**: Removes branches that have been inactive and remain unmerged, maintaining a clean repository.
 
 **Contributing** 🤝
 
