@@ -16,30 +16,52 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: 🛠️ Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: 🔄 Ensure package-lock.json is up-to-date
         run: npm install --package-lock-only --ignore-scripts
+
       - name: 📦 Install dependencies
         run: npm ci
+
       - name: 🐶 Set up Husky
         run: npx husky install
+
       - name: 🖋️ Format code
         run: npm run format
+
       - name: 🧹 Lint code
         run: npm run lint
+
       - name: 📝 Generate test files
         run: npm run generate-tests
+
       - name: 🔨 Build
         run: npm run build
+
       - name: 🧪 Test with coverage
         run: npm run test
+
       - name: 📤 Commit and push generated test files
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add src/**/*.spec.ts
-          git commit -m '🤖 Generated unit tests'
+          git commit -m '🤖 Generated unit tests' || echo "No changes to commit"
           git push
+
+      # New Steps for Documentation Generation
+      - name: 📚 Generate documentation
+        run: npx compodoc -p tsconfig.app.json -d documentation
+
+      - name: 🚀 Deploy documentation to GitHub Pages
+        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./documentation
+          publish_branch: gh-pages

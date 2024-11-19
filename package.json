@@ -22,8 +22,9 @@
     "lint-staged": "lint-staged",
     "docker-clean": "echo '🧹 Cleaning up Docker resources...' && docker stop $(docker ps -aq) && docker rm $(docker ps -aq) && docker image prune -af && docker volume prune -f && docker network prune -f && docker builder prune -f",
     "postinstall": "if [ \"$DOCKER\" = \"true\" ]; then npm install typescript@5.5.4 --legacy-peer-deps; fi",
-    "generate-tests": "echo '🛠️ Generating missing test files... 📂' && node scripts/generate-tests.js && echo '✅ Test generation complete! 🎉'"
-
+    "generate-tests": "echo '🛠️ Generating missing test files... 📂' && node scripts/generate-tests.js && echo '✅ Test generation complete! 🎉'",
+    "generate-docs": "echo '📚 Generating documentation... ✍️' && compodoc -p tsconfig.app.json -d documentation && echo '✅ Documentation generation complete! 🎉'",
+    "serve-docs": "echo '🚀 Serving documentation at http://127.0.0.1:8080... 🌐' && compodoc -s -d documentation && echo '🛑 Documentation server stopped.'"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
