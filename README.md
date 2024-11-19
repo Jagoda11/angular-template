@@ -4,6 +4,8 @@
 ![TypeScript](https://img.shields.io/github/package-json/dependency-version/Jagoda11/angular-template/dev/typescript?label=TypeScript)
 ![Angular](https://img.shields.io/github/package-json/dependency-version/Jagoda11/angular-template/@angular/core?label=Angular)
 [![🧹 Remove Stale Unmerged Branches](https://github.com/Jagoda11/angular-template/actions/workflows/%F0%9F%A7%B9remove-stale-unmerged-branches.yml/badge.svg)](https://github.com/Jagoda11/angular-template/actions/workflows/%F0%9F%A7%B9remove-stale-unmerged-branches.yml)
+[![🚀 Dependency Update and Vulnerability Scan](https://github.com/Jagoda11/angular-template/actions/workflows/%E2%AC%86%EF%B8%8Fnpm-upgrade.yml/badge.svg)](https://github.com/Jagoda11/angular-template/actions/workflows/%E2%AC%86%EF%B8%8Fnpm-upgrade.yml)
+[![CI](https://github.com/Jagoda11/angular-template/actions/workflows/%F0%9F%9A%80ci.yml/badge.svg)](https://github.com/Jagoda11/angular-template/actions/workflows/%F0%9F%9A%80ci.yml)
 
 A starter template for Angular projects with ESLint, Prettier, and custom scripts. This template is designed to help you kickstart your Angular applications with the latest configurations and best practices. 🚀
 
