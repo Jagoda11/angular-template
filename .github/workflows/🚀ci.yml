@@ -32,3 +32,12 @@ jobs:
         run: npm run build
       - name: 🧪 Test with coverage
         run: npm run test
+      - name: 📤 Commit and push generated test files
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m '🤖 Generated unit tests'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
