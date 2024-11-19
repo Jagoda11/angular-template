@@ -26,68 +26,68 @@ A starter template for Angular projects with ESLint, Prettier, and custom script
 
 **Clone the repository**:
 
-   ```bash
-   git clone https://github.com/Jagoda11/angular-template.git
-   cd angular-template
-  ```
+```bash
+git clone https://github.com/Jagoda11/angular-template.git
+cd angular-template
+```
 
 **Install dependencies**:
 
-   ```bash
-   npm install 
-   ```
+```bash
+npm install
+```
 
 **Running the Development Server**
 To start the development server, run:
 
- ```bash
-   npm start
-   ```
+```bash
+  npm start
+```
 
 This will start the Angular development server and you can view your application at <http://localhost:4200>.
 
 **Building the Project**
 To build the project,run:
 
- ```bash
-   npm run build
-   ```
+```bash
+  npm run build
+```
 
 This will create a production build of your application in the dist/ directory.
 
 Running Tests
 To run the tests, use:
 
- ```bash
-   npm test
-   ```
+```bash
+  npm test
+```
 
 This will execute the unit tests using Karma and Jasmine.
 
 **Linting the Code**
 To lint the code, run:
 
- ```bash
-   npm run lint
-   ```
+```bash
+  npm run lint
+```
 
 This will run ESLint on your project to check for code quality issues.
 
 **Formatting the Code**
 To format the code using Prettier, run:
 
- ```bash
-   npm run format
-   ```
+```bash
+  npm run format
+```
 
 This will format your code according to the Prettier configuration.
 
 **Cleaning Up**
 To clean up the project (remove node_modules, dist, and package-lock.json), run:
 
- ```bash
-   npm run clean
-   ```
+```bash
+  npm run clean
+```
 
 **Generating Test Files**
 To generate missing test files, run:

@@ -2,8 +2,8 @@ name: 🚀 Dependency Update and Vulnerability Scan
 
 on:
   schedule:
-    - cron: '0 2 * * 0'  # Runs weekly on Sunday at 2 a.m. UTC
-  workflow_dispatch:      # Allows manual triggering
+    - cron: '0 2 * * 0' # Runs weekly on Sunday at 2 a.m. UTC
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
   update-and-scan:
