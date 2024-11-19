@@ -43,5 +43,3 @@ jobs:
           git add . ':! .github/workflows'
           git commit -m '🤖 Generated unit tests'
           git push
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
