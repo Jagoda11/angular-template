@@ -89,6 +89,15 @@ To clean up the project (remove node_modules, dist, and package-lock.json), run:
    npm run clean
    ```
 
+**Generating Test Files**
+To generate missing test files, run:
+
+```bash
+npm run generate-tests
+```
+
+This will create test files for your Angular components, services, application configs, and other exports that do not already have corresponding test files. The generated test files will include appropriate test cases for exported members, lifecycle hooks, and other relevant aspects.
+
 ## 📜 Scripts
 
 Here are the available scripts in this project:
@@ -119,6 +128,9 @@ Here are the available scripts in this project:
 
 - **`lint-staged`** 📝: Runs lint-staged to check and format only staged files  
   `npm run lint-staged`
+
+- **`generate-tests`** 📝: Runs generate-tests to create test files and basic tests
+  `npm run generate-tests`
 
   ## 🛡️ Pre-commit Hooks
 
