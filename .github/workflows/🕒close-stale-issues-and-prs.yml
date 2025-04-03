@@ -2,7 +2,7 @@ name: Close Stale Issues and PRs
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight
+    - cron: '0 0 1 * *' # Runs monthly
 
 permissions:
   issues: write
