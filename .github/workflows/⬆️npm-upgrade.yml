@@ -55,6 +55,7 @@ jobs:
         run: |
           git config --local user.name "Debugging Duck 🦆"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
           git add .
           git diff-index --quiet HEAD || git commit -m "⬆️ update all npm dependencies ⬆️"
 
