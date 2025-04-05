@@ -60,4 +60,4 @@ jobs:
 
       - name: 🚀 Push changes
         if: success()
-        run: git push
+        run: git push origin HEAD:main --force-with-lease
