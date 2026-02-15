@@ -55,6 +55,7 @@
     "@angular-eslint/template-parser": "^20.5.0",
     "@angular/cli": "^20.3.8",
     "@angular/compiler-cli": "^20.3.9",
+    "@angular/platform-browser-dynamic": "^20.3.9",
     "@types/jasmine": "~5.1.12",
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
