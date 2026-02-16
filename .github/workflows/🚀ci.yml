@@ -16,6 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 🛠️ Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -47,6 +50,7 @@ jobs:
         run: npm run test
 
       - name: 📤 Commit and push generated test files
+        if: github.event_name != 'pull_request'
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
